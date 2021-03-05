@@ -1,0 +1,76 @@
+WORKING TITLE: curator (all lowercase)
+
+"An artist to client environment for independent creators" or as Chuwei put it "Google Doc for drawing"
+- Could be an app, website, or both.
+- POTENTIAL USER BASE: artists, editors, teachers, managers/supervisors, 
+
+======================
+Minimum Viable Product --- Stage 0
+======================
+- A chatroom with a main window that can display the copy of an image (or text file) and provides the chat members to draw over that image. Everything else is built off of or around this feature.
+	- A sidebar chat window
+	- Main display window
+	- A transparent overlay where the edits exist
+
+
+================
+User Environment --- Stage 1
+================
+- Users can create private chatrooms as a host and share the roomkey with guests. Maximum number in a room is 16(more?). No user profile necessary to attend. Guest IDs linked to IP address or cookies.
+
+- Users can text (or ideally talk) to others in the room about projects in progress using the chat side window
+
+- The main window will hold the sample for review. Everyone will be able to type and draw over the sample to provide feedback directly on top. Unique colors will be linked to each user, but users will have settings to change the color and size of their text and pen strokes.
+	- The edited file
+
+- Provide protection capabilities from screen grabbing, user options to automatically watermark the sample, maybe auto-blackout the display screen in the event of a screen capture. These features can be disabled.
+
+- Save and Print options
+
+- Chat features
+	- Whisper: w/username or whisper/username (Private message one other user in the chatroome)
+	- Notify: @username or at/username or n/username or notify/username
+	- Mute: m/username or mute/username (Host feature)
+	- Kick: k/username or lick/username (Host feature)
+
+
+====================
+Editing Capabilities --- Stage 2
+====================
+- Expand the type of files that can be accepted. Could upload documents, pdfs and such. Using the same drawing overlay, but linking certain linemarks to highlighted text.
+	- If text is highlighted while the user draws then those linemarks will be associated with the highlighted space.
+
+- Users will have the ability to directly modify text documents using an in-app text editor.
+
+- Basic color adjustment: HSB, Levels, etc.
+
+- 
+
+========
+Profiles --- Stage 3
+========
+- Artist profiles that potential clients can browse. No full artist gallery, but maybe a small portfolio of samples (5?). Links to their websites and social media. Biographical info, contact info etc.
+
+- Simpler non-artist profiles with a friends list feature (artist profiles will have all the non-artist features)
+
+- Categories and search features to find artists
+
+
+======================
+Fun community sections --- Stage 4
+======================
+- Scrawl
+	Upload famous works of art or photos and doodle over them with friends. Give Napoleon an eyepatch or the Mona Lisa a neck tattoo.
+
+- Trip Planner
+	Pull up an image of a map so members of the chat can draw on it and route a trip
+
+
+=========================
+Potential business models --- Stage 5
+=========================
+- Allow for the transaction and sale of digital art directly on the platform. Take a cut of transactions.
+
+- Subscription model for editors and teachers.
+
+- Ads maybe, I guess. Only if it's necessary to maintain servers.
