@@ -4,3 +4,9 @@ A private chatroom service featuring drawing and editing capabilities for collab
 To be written in Python.
 
 For now the requirements and roadmap can be found in the [design document](curatorDesignDoc.txt)
+
+# Requirements
+(to be filled)
+
+# Design
+(to be filled)
