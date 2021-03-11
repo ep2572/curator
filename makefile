@@ -6,7 +6,7 @@ dev_env:
 
 tests: FORCE
 	$(PYLINT) *.py
-	nosetests --exe --with-coverage --verbose --coveropackage=SETemplate
+	nosetests --exe --with-coverage --verbose --cover-package=SETemplate
 	
 prod:
 	git commit -a
