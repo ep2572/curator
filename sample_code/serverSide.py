@@ -25,7 +25,7 @@ client_name = client_name.decode()
 print(client_name + ' has connected.')
 print('Press [bye] to leave the chat room')
 connection.send(name.encode())
-whileTrue:
+while True:
 	message = input('Me > ')
 	if message == '[bye]':
 		message = 'Good Night...'
