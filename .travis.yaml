@@ -1,0 +1,20 @@
+---
+language: python
+
+python:
+    - '3.7'
+
+install:
+    - make dev_env
+
+env:
+    PYTHONPATH=$(pwd)
+
+script:
+    - make tests
+
+# deploy to heroku
+deploy:
+    - provider: heroku
+      api_key: $HEROKU_API_KEY
+      app: sd-game-api
