@@ -27,7 +27,7 @@ heroku:
 	heroku login
 	# set up heroku app as remote for this repo
 	heroku git:remote -a curator
-	heroku ci:config:set PYTHONPATH="/curator"
+	heroku ci:config:set PYTHONPATH="/app"
 	heroku ci:config:set HOME="/app"
 	echo "web: gunicorn source.endpoints:app" > Procfile
 	# enter deploy code in .travis.yml
