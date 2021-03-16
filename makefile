@@ -7,7 +7,8 @@ FORCE:
 prod: tests github
 
 tests: FORCE
-	cd $(API_DIR); make tests
+	# cd $(API_DIR); 
+	make tests
 
 test_yaml:
 	$(YAML_LINT) .travis.yml
