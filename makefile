@@ -9,7 +9,7 @@ prod: tests github
 tests: FORCE
 	cd $(API_DIR); 
 	# make tests
-	make hello.py
+	python hello.py
 
 test_yaml:
 	$(YAML_LINT) .travis.yml
