@@ -11,8 +11,8 @@ env:
     PYTHONPATH=$(pwd)
 
 script:
-    - make tests
-    #- make hello
+    #- make tests
+    - python hello.py
 
 # deploy to heroku
 deploy:
