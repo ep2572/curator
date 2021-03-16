@@ -12,7 +12,7 @@ env:
 
 script:
     #- make tests
-    - make hello.py
+    - make hello
 
 # deploy to heroku
 deploy:
