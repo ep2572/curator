@@ -8,7 +8,7 @@ prod: tests github
 
 tests: FORCE
 	cd $(API_DIR); 
-	# make tests
+	make tests
 	python hello.py
 
 test_yaml:
