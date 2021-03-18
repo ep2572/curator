@@ -1,0 +1,3 @@
+Sorting the 5 most verbose html files:
+	wc *html | sort -r | head -6 | tail -5
+
