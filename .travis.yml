@@ -19,3 +19,6 @@ deploy:
     - provider: heroku
       api_key: $HEROKU_API_KEY
       app: se-spring2021-curator
+      on: 
+        repo: ep2572/curator
+        branch: main
