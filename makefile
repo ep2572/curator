@@ -5,11 +5,10 @@ REQ_DIR = .
 FORCE:
 
 prod: tests github
-	python3 hello.py
+	#python3 hello.py
 
 tests: FORCE
-	cd $(API_DIR); 
-	#make tests
+	cd $(API_DIR); make tests
 
 test_yaml:
 	$(YAML_LINT) .travis.yml
@@ -27,6 +26,7 @@ heroku:
 	# install heroku:
 	curl https://cli-assets.heroku.com/install.sh | sh
 	heroku login
+	heroku apps:create curator
 	# set up heroku app as remote for this repo
 	heroku git:remote -a curator
 	heroku ci:config:set PYTHONPATH="/app"
