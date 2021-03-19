@@ -26,7 +26,7 @@ heroku:
 	# install heroku:
 	curl https://cli-assets.heroku.com/install.sh | sh
 	heroku login
-	heroku apps:create curator
+	heroku apps:create se-spring2021-curator
 	# set up heroku app as remote for this repo
 	heroku git:remote -a curator
 	heroku ci:config:set PYTHONPATH="/app"
