@@ -21,7 +21,7 @@ A roadmap can be found [here](roadmap.txt)
             <li>Note -- a preemtive notification provided before entering a room. e.g. "Warning: Avenger's spoilers ahead!!!"</li>
         </ul>
        - Buttons:  
-          - `Create Room` -- which will open up a prompt for the user to provide the following:  
+        - `Create Room`   
   - The homepage will also contain links:  
     <ul>
         <li>`How To Use` -- this page provides a description of the app.</li>
