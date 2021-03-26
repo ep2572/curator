@@ -48,7 +48,7 @@ A roadmap can be found [here](roadmap.txt)
 ## Setup
 1. Ensure that make and pip are properly installed on your system.
 2. Enter `make dev_env` to create the build environment.
-3. Use `make prod` to compile the application.
+3. Use `make prod` to perform tests and push changes to github.
 
 ## Design
 (to be filled)
