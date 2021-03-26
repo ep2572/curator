@@ -3,7 +3,7 @@ A private chatroom service featuring drawing and editing capabilities for collab
 
 To be written in Python.
 
-A roadmap can be found in the [design document](curatorDesignDoc.txt)
+A roadmap can be found in the [here](roadmap.txt)
 
 ## Initial Requirements
 - User must be able to set up a private chatroom with a unique roomkey without the need for accounts.
