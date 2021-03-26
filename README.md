@@ -32,13 +32,13 @@ A roadmap can be found [here](roadmap.txt)
   - Data will be cleared once last user leaves the chatroom
 - Chat Functionality:
   - Hosts have all Moderator privileges
-  - `Whisper`: w/username or whisper/username (Private message one other user in the chatroome)
-  - `Notify`: @username or at/username or n/username or notify/username (provides a sound effect and highlights the message for target user)
-  - `Mute`: m/username or mute/username (Moderator feature)
-  - `Kick`: k/username or kick/username (Moderator feature)
-  - `Make Moderator`: mod/username (Host feature)
-  - `Remove Moderator`: rmod/username (Host feature)
-  - `Change Host`: host/username (Host feature: current host loses host privileges, but remains a Moderator)
+  - Whisper: `w/username` or `whisper/username` (Private message one other user in the chatroome)
+  - Notify: `@username` or `at/username` or n/username or notify/username (provides a sound effect and highlights the message for target user)
+  - Mute: `m/username` or `mute/username` (Moderator feature)
+  - Kick: `k/username` or `kick/username` (Moderator feature)
+  - Make Moderator: `mod/username` (Host feature)
+  - Remove Moderator: `rmod/username` (Host feature)
+  - Change Host: `host/username` (Host feature: current host loses host privileges, but remains a Moderator)
 - Main body of the page will diplay the sample file(for now just .jpeg, .png, .gif, .bmp) overlayed with an editing layer
   - Anyone will submit to thePermission to submit is provided by the host
   - All in attendance will be able to draw or type on the editing layer given host permission.
