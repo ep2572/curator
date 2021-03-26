@@ -13,7 +13,7 @@ from source.db import fetch_games
 app = Flask(__name__)
 api = Api(app)
 
-#CHATROOM = 'chatroom'
+# CHATROOM = 'chatroom'
 HELLO = 'hello'
 AVAILABLE = 'Available endpoints:'
 MAIN_MENU = "Main Menu"
@@ -31,14 +31,15 @@ def get_main_menu():
     except FileNotFoundError:
         return None
 
-#@api.route('/chatroom')
-#class Chatroom(Resource)
+# @api.route('/chatroom')
+# class Chatroom(Resource)
     # Attempting to add a new route: Chatroom
-    
+
 #    def get(self):
         # For now this will just return a line of text
 #        return {'This is where a ' CHATROOM: ' will be'}
-    
+
+
 @api.route('/hello')
 class HelloWorld(Resource):
     """
