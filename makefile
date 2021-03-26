@@ -5,7 +5,7 @@ REQ_DIR = .
 FORCE:
 
 prod: tests github
-	#python3 hello.py
+	py hello.py
 
 tests: FORCE
 	cd $(API_DIR); make tests
