@@ -20,8 +20,11 @@ A roadmap can be found [here](roadmap.txt)
             <li>Capacity (max 32(?))</li>
             <li>Note -- a preemtive notification provided before entering a room. e.g. "Warning: Avenger's spoilers ahead!!!"</li>
         </ul>
-       - Buttons:  
-        - `Create Room`   
+        - Buttons:  <br>
+            <ul>
+                <li>`Create Room`</li>
+            </ul>
+        - When a new room is created a 12 character password is generated and displayed just below the room name in the upper left, above the chat. The password is required for entry into the room.
   - The homepage will also contain links:  
     <ul>
         <li>`How To Use` -- this page provides a description of the app.</li>
