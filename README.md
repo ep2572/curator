@@ -3,7 +3,7 @@ A private chatroom service featuring drawing and editing capabilities for collab
 
 To be written in Python.
 
-A roadmap can be found [here](roadmap.txt)
+A roadmap can be found [here](roadmap.txt)  
 A detailed wireframe can be found [here](sitemap.png)
 
 ## Initial Requirements
