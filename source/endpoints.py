@@ -31,6 +31,7 @@ def get_main_menu():
     except FileNotFoundError:
         return None
 
+
 @api.route('/chatroom')
 class Chatroom(Resource):
     """
