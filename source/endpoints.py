@@ -32,7 +32,7 @@ def get_main_menu():
         return None
 
 @api.route('/chatroom')
-class Chatroom(Resource)
+class Chatroom(Resource):
     """
     Attempting to add a new route: Chatroom
     """
