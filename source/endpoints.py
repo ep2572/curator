@@ -32,16 +32,16 @@ def get_main_menu():
         return None
 
 
-@api.route('/chatroom')
+@api.route('/<int:roomkey>')
 class Chatroom(Resource):
     """
     Attempting to add a new route: Chatroom
     """
-    def get(self):
+    def put(self, roomkey):
         """
         For now this will just return a line of text
         """
-        return {'This is where a ' CHATROOM: ' will be'}
+        return {'Joined chat: ' roomkey}
 
 
 @api.route('/')
