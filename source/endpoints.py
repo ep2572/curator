@@ -38,7 +38,9 @@ class Chatroom(Resource):
     Attempting to add a new route: Chatroom
     """
     def get(self):
-        # For now this will just return a line of text
+        """
+        For now this will just return a line of text
+        """
         return {'This is where a ' CHATROOM: ' will be'}
 
 
