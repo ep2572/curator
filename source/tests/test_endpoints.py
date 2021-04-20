@@ -11,6 +11,14 @@ from source.endpoints import Games
 
 
 class TestEndpoints(TestCase):
+    def test_home(self):
+        """
+        Test our "home" endpoint.
+        """
+        home_ep = Home(Resource)
+        ret = home_ep.get()
+        self.assertIn(ret)
+        
     def test_hello(self):
         """
         Test our "hello" endpoint.
