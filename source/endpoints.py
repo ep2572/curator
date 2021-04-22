@@ -117,6 +117,9 @@ class Games(Resource):
 
 user = api.model("user", {
     "name": fields.String("User name.")
+    "ip": fields.String("IP address.")
+    "color": fields.String("Hexadecimal RGB value 0x123456.")
+    "status": fields.String("Host/Moderator/User.")
 })
 
 
