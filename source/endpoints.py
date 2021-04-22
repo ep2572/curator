@@ -13,6 +13,7 @@ from source.db import fetch_games
 app = Flask(__name__)
 api = Api(app)
 
+HOME = 'home'
 CHATROOM = 'chatroom'
 HELLO = 'hello'
 AVAILABLE = 'Available endpoints:'
