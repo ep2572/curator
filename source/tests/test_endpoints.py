@@ -24,7 +24,7 @@ class TestEndpoints(TestCase):
         Test our "chatroom" endpoint.
         """
         chat_ep = Chatroom(Resource)
-        ret = chat_ep.put(12345)
+        ret = chat_ep.put()
         self.assertIn(CHATROOM, ret)
         
     def test_hello(self):
