@@ -17,7 +17,7 @@ class TestEndpoints(TestCase):
         """
         home_ep = Home(Resource)
         ret = home_ep.get()
-        self.assertIn(ret)
+        self.assertIn(HOME, ret)
         
     def test_chatroom(self):
         """
@@ -25,7 +25,7 @@ class TestEndpoints(TestCase):
         """
         chat_ep = Chatroom(Resource)
         ret = chat_ep.put(12345)
-        self.assertIn(ret)
+        self.assertIn(CHATROOM, ret)
         
     def test_hello(self):
         """
