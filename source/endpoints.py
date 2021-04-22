@@ -42,7 +42,7 @@ class Chatroom(Resource):
         """
         For now this will just return a line of text
         """
-        return {CHATROOM: 'Joined: <int:roomkey>'}
+        return {CHATROOM: 'Joined: ' roomkey}
 
 
 @api.route('/')
@@ -55,6 +55,11 @@ class Home(Resource):
         Trivial check to make sure that the endpoint is working
         """
         return {HOME: 'endpoint is available'}
+    def goTo():
+        """
+        Opens the landing page
+        """
+        return render_template('home.html')
 
 
 @api.route('/hello')
