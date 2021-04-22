@@ -13,8 +13,8 @@ from source.db import fetch_games
 app = Flask(__name__)
 api = Api(app)
 
-HOME = 'home'
-CHATROOM = 'chatroom'
+HOME = 'Home'
+CHATROOM = 'Chatroom'
 HELLO = 'hello'
 AVAILABLE = 'Available endpoints:'
 MAIN_MENU = "Main Menu"
@@ -42,7 +42,7 @@ class Chatroom(Resource):
         """
         For now this will just return a line of text
         """
-        return 'Joined chat: '
+        return {CHATROOM: 'Joined: <int:roomkey>'}
 
 
 @api.route('/')
@@ -54,7 +54,7 @@ class Home(Resource):
         """
         Trivial check to make sure that the endpoint is working
         """
-        return 'Home endpoint is available'
+        return {HOME: 'endpoint is available'}
 
 
 @api.route('/hello')
