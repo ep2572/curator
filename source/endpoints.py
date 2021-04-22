@@ -41,7 +41,7 @@ class Chatroom(Resource):
         """
         For now this will just return a line of text
         """
-        return {'Joined chat: ' roomkey}
+        return 'Joined chat: '
 
 
 @api.route('/')
