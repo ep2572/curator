@@ -18,7 +18,7 @@ github: FORCE
 	git push origin master
 
 dev_env: FORCE
-	pip install -r $(REQ_DIR)/requirements-dev.txt
+	pip3 install -r $(REQ_DIR)/requirements-dev.txt
 
 # here's how to set up heroku for your repo:
 # Already done for gcallah/GameAPI!
