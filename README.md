@@ -6,6 +6,16 @@ To be written in Python.
 A roadmap can be found [here](roadmap.txt)  
 A detailed wireframe can be found [here](sitemap.png)
 
+## Current Implementation
+- Room container
+- SQL Database Setup
+- 
+
+## Setup
+1. Ensure that make and pip are properly installed on your system.
+2. Enter `make dev_env` to create the build environment.
+3. Use `make prod` to perform tests and push changes to github.
+
 ## Initial Requirements
 - The application homepage will contain two main sections:  
     1. Join An Existing Room  
@@ -51,11 +61,3 @@ A detailed wireframe can be found [here](sitemap.png)
   - All in attendance will be able to draw or type on the editing layer given host permission.
 - Users will be able to save and print modified samples as .jpeg files.
   - Opens the system's `Save As` and `Print` dialogue boxes using an API
-
-## Setup
-1. Ensure that make and pip are properly installed on your system.
-2. Enter `make dev_env` to create the build environment.
-3. Use `make prod` to perform tests and push changes to github.
-
-## Design
-(to be filled)
