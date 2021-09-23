@@ -7,9 +7,8 @@ A roadmap can be found [here](roadmap.txt)
 A detailed wireframe can be found [here](sitemap.png)
 
 ## Current Implementation
-- Room container
+- Basic room structure built
 - SQL Database Setup
-- 
 
 ## Setup
 1. Ensure that make and pip are properly installed on your system.
