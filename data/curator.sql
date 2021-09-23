@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`address`, `name`, `role`, `color`, `in_room`) VALUES
 ('123.456.7.890', 'tester', 'host', '343530', 'sad345gfd4d6'),
 ('420.69.69.420', 'Skeletor', 'std', '366163', '234p985ujy3h'),
-('fake_host', 'fake_host', 'host', '', '');
+('dummy_host', 'dummy_host', 'host', '', '');
 
 --
 -- Constraints for dumped tables
