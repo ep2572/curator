@@ -10,7 +10,7 @@ alnum = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 keychain = {"": 1}
 
 
-def getroomkey():
+def get_room_key():
     random.seed()
     seq = ""
     while seq in keychain:
