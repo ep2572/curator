@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from source.db import fetch_games
-import roomkey
+import source.roomkey
 
 class DBTestCase(TestCase):
     def test_fetch_games(self):
