@@ -7,7 +7,7 @@ Random Roomkey Generator
 import random
 
 alnum = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-keychain = {"" : 1}
+keychain = {"": 1}
 
 
 def getroomkey():
@@ -15,8 +15,8 @@ def getroomkey():
     seq = ""
     while seq in keychain:
         seq = ""
-        for n in range(0,12):## Current size of sequence: 12
-            seq += alnum[random.randrange(0,61)]
+        for n in range(0, 12):  # Current size of sequence: 12
+            seq += alnum[random.randrange(0, 61)]
     keychain[seq] = 1
     return seq
 
@@ -24,5 +24,5 @@ def getroomkey():
 """
 Testing
 """
-##print(getroomkey())
-##print(len(keychain))
+# print(getroomkey())
+# print(len(keychain))
