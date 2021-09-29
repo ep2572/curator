@@ -4,3 +4,5 @@ nose
 coverage
 flask-socketio
 SQLAlchemy
+websockets
+websocket-client
