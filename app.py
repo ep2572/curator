@@ -1,5 +1,6 @@
 #!/bin/env python
 from flask import Flask
+from flask_restx import Api
 from source.socket import socketio
 
 def create_app(debug=True):
@@ -16,5 +17,5 @@ def create_app(debug=True):
 
 if __name__ == '__main__':
     app = create_app()
-
+    api = Api(app)
     socketio.run(app)
