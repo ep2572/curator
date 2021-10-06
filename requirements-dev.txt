@@ -2,7 +2,7 @@
 flake8
 nose
 coverage
-Flask-SocketIO
+flask-socketio
 SQLAlchemy
 websockets
 websocket-client

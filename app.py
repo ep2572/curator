@@ -1,21 +1,15 @@
 #!/bin/env python
 from flask import Flask
-from flask_restx import Api
 from source.socket import socketio
 
-def create_app(debug=True):
-    app = Flask(__name__)
-    app.debug = debug
-    app.config['SECRET_KEY'] = 'randomkey'
+app = Flask(__name__)
+app.debug = debug
+app.config['SECRET_KEY'] = 'randomkey'
 
-    from source.route import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-    socketio.init_app(app)
-    import source.events
-    return app
-
+from source.route import main as main_blueprint
+app.register_blueprint(main_blueprint)
+socketio.init_app(app)
+import source.events
 
 if __name__ == '__main__':
-    app = create_app()
-    api = Api(app)
-    # socketio.run(app)
+    socketio.run(app)
