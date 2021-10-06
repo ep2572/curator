@@ -6,3 +6,5 @@ flask_socketio
 SQLAlchemy
 websockets
 websocket-client
+werkzeug
+simple-websocket
