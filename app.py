@@ -3,7 +3,7 @@ from flask import Flask
 from source.socket import socketio
 
 app = Flask(__name__)
-app.debug = debug
+app.debug = True
 app.config['SECRET_KEY'] = 'randomkey'
 
 from source.route import main as main_blueprint
