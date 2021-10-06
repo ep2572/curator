@@ -15,6 +15,10 @@ A detailed wireframe can be found [here](sitemap.png)
 2. Enter `make dev_env` to create the build environment.
 3. Use `make prod` to perform tests and push changes to github.
 
+## Testing
+- Use `make tests` to perform tests
+- Use `./local.sh` to run the server on localhost:8000
+
 ## Initial Requirements
 - The application homepage will contain two main sections:  
     1. Join An Existing Room  
