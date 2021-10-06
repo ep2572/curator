@@ -18,4 +18,4 @@ def create_app(debug=True):
 if __name__ == '__main__':
     app = create_app()
     api = Api(app)
-    socketio.run(app)
+    # socketio.run(app)
