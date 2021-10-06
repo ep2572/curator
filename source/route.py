@@ -6,6 +6,7 @@ from flask import (
     url_for,
     Blueprint,
 )
+from source.roomkey import get_roomkey
 
 main = Blueprint('main', __name__)
 
@@ -37,6 +38,7 @@ def make_room():
     room = request.form['room_name']
     cap = request.form['capacity']
     note = request.form['note']
+    key = get_roomkey()
     if not name:
         error = "A username must be provided."
         return render_template('home.html', make_err=error)
