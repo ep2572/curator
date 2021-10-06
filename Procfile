@@ -1,1 +1,1 @@
-web: gunicorn curator.app:app
+web: gunicorn app:app
