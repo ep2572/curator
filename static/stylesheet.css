@@ -10,6 +10,11 @@
     font: 10pt arial, sans-serif;
 }
 
+.error {
+    color: red;
+    font: 10pt arial, sans-serif;
+}
+
 .bar span {
     width: auto;
     height: 5px;
