@@ -3,7 +3,7 @@ from flask import (
     request,
     session,
     render_template,
-    # url_for,
+    url_for,
     Blueprint,
 )
 # from .roomkey import get_roomkey
@@ -22,13 +22,13 @@ def join_room():
     key = request.form['room_key']
     if not name:
         error = "A username must be provided."
-        return render_template('home.html', join_err=error)
+        return redirect('/', join_err=error)
     if not key:
         error = "A room key must be provided."
         return render_template('home.html', join_err=error)
-    return render_template(chat.html)
     # Not yet implementing user persistence on re-entry
-    # session['user_name'] = name
+    session['user_name'] = name
+    return render_template('chat.html')
 
 
 @main.route('/make_room', methods=['GET', 'POST'])
@@ -43,7 +43,7 @@ def make_room():
     if not name:
         error = "A username must be provided."
         return render_template('home.html', make_err=error)
-    return render_template(chat.html)
+    return render_template('chat.html')
     # Not yet implementing user persistence on re-entry
     # session['user_name'] = name
 
