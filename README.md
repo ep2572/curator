@@ -9,6 +9,9 @@ A detailed wireframe can be found [here](sitemap.png)
 ## Current Implementation
 - Basic room structure built
 - SQL Database Setup
+- Once file overlay is complete:
+    - Max file size: 16 MB
+    - 1 file per room
 
 ## Setup
 1. Ensure that make and pip are properly installed on your system.
