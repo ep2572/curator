@@ -3,7 +3,7 @@ from flask import (
     request,
     session,
     render_template,
-    url_for,
+    # url_for,
     Blueprint,
 )
 from .roomkey import get_roomkey
@@ -39,7 +39,7 @@ def make_room():
     # room = request.form['room_name']
     # cap = request.form['capacity']
     # note = request.form['note']
-    key = get_roomkey()
+    # key = get_roomkey()
     if not name:
         error = "A username must be provided."
         return render_template('home.html', make_err=error)
