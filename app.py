@@ -1,10 +1,14 @@
 #!/bin/env python
 from flask import Flask
+
 from source.socket import socketio
 
 app = Flask(__name__)
 app.debug = True
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 *1000
 app.config['SECRET_KEY'] = 'randomkey'
+
+
 
 from source.route import main as main_blueprint
 app.register_blueprint(main_blueprint)

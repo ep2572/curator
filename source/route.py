@@ -6,7 +6,7 @@ from flask import (
     url_for,
     Blueprint,
 )
-# from .roomkey import get_roomkey
+from .roomkey import get_roomkey
 
 main = Blueprint('main', __name__)
 
@@ -26,7 +26,7 @@ def join_room():
     if not key:
         error = "A room key must be provided."
         return render_template('home.html', join_err=error)
-    # Not yet implementing user persistence on re-entry
+    # TODO: add SQL query
     session['user_name'] = name
     return render_template('chat.html')
 
@@ -39,13 +39,13 @@ def make_room():
     # room = request.form['room_name']
     # cap = request.form['capacity']
     # note = request.form['note']
-    # key = get_roomkey()
+    key = get_roomkey()
     if not name:
         error = "A username must be provided."
         return render_template('home.html', make_err=error)
+    # TODO: add SQL query
+    session['user_name'] = name
     return render_template('chat.html')
-    # Not yet implementing user persistence on re-entry
-    # session['user_name'] = name
 
 
 @main.route('/chat')

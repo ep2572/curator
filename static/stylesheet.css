@@ -62,6 +62,17 @@ input {
     text-align: center;
 }
 
+input[type=submit] {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--theme);
+    border-radius: 10px;
+    color: white;
+    font: bold 14pt arial, sans-serif;
+    border: none;
+    max-height: 100px;
+}
+
 button {
     margin: 10px;
     padding: 10px;

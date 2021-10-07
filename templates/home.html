@@ -15,9 +15,9 @@
 		<p class="error"><strong>Error:</strong> {{join_err}}</p>
 		{% endif %}
         <form action="/join_room" method="POST">
-            <input type="text" name="user_name" placeholder="Username"><br>
-            <input type="text" name="room_key" placeholder="Room Key"><br>
-            <button>Join</button>
+            <input type="text" name="user_name" placeholder="Username" required><br>
+            <input type="text" name="room_key" placeholder="Room Key" required><br>
+            <input type="submit" value="Join" />
         </form>
 
         <hr class="solid" color="#8393CA">
@@ -27,11 +27,11 @@
 		<p class="error"><strong>Error:</strong> {{make_err}}</p>
 		{% endif %}
         <form action="/make_room" method="POST">
-            <input type="text" for="user" name="user_name" placeholder="Username"><br>
+            <input type="text" for="user" name="user_name" placeholder="Username" required><br>
             <input type="text" for="room" name="room_name" placeholder="Room Name"><br>
             <input type="text" for="cap" name="capacity" placeholder="Capacity (max: 32)"><br>
             <input type="text" for="warning" name="note" placeholder="Note"><br>
-            <button>Create</button>
+            <input type="submit" value="Create" />
         </form>
         <button style="position:absolute; padding: 5px 5px 2px;right:10px; bottom:10px;"><img alt="Info" width="25px" height="25px" src="static/img/info.svg"></button>
     </div>
