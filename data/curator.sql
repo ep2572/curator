@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 23, 2021 at 02:43 AM
+-- Generation Time: Oct 07, 2021 at 02:34 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -57,6 +57,8 @@ CREATE TABLE IF NOT EXISTS `room` (
   `mute` tinyint(1) NOT NULL,
   `note` varchar(512) NOT NULL,
   `capacity` int UNSIGNED NOT NULL DEFAULT '32',
+  `file_name` varchar(256) NOT NULL,
+  `file` mediumblob NOT NULL,
   PRIMARY KEY (`room_key`),
   KEY `host_idx` (`host`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -65,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `room` (
 -- Dumping data for table `room`
 --
 
-INSERT INTO `room` (`room_key`, `host`, `room_name`, `log`, `mute`, `note`, `capacity`) VALUES
-('234p985ujy3h', '420.69.69.420', 'Skeletor\'s House for cool guys', 'OMG I can\'t believed they banned meeeee!!!1!!!', 0, 'Only cool dudes allowed', 32),
-('sad345gfd4d6', '123.456.7.890', 'test room', 'TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...', 0, '', 1);
+INSERT INTO `room` (`room_key`, `host`, `room_name`, `log`, `mute`, `note`, `capacity`, `file_name`, `file`) VALUES
+('234p985ujy3h', '420.69.69.420', 'Skeletor\'s House for cool guys', 'OMG I can\'t believed they banned meeeee!!!1!!!', 0, 'Only cool dudes allowed', 32, '', ''),
+('sad345gfd4d6', '123.456.7.890', 'test room', 'TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...TESTING...', 0, '', 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`address`, `name`, `role`, `color`, `in_room`) VALUES
 ('123.456.7.890', 'tester', 'host', '343530', 'sad345gfd4d6'),
 ('420.69.69.420', 'Skeletor', 'std', '366163', '234p985ujy3h'),
-('dummy_host', 'dummy_host', 'host', '', '');
+('fake_host', 'fake_host', 'host', '', '');
 
 --
 -- Constraints for dumped tables
