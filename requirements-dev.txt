@@ -1,6 +1,6 @@
 -r requirements.txt
 flake8
-nose
+nose1
 coverage
 flask-socketio
 psycopg2
