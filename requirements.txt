@@ -3,3 +3,4 @@ flask
 flask-restx
 flask-socketio
 psycopg2
+SQLAlchemy
