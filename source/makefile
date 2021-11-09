@@ -12,7 +12,7 @@ docs: $(DOCFILES)
 tests: lint unit
 
 unit: FORCE
-	nosetests --exe --verbose --with-coverage --cover-package=source
+	nose2 --verbose --with-coverage
 
 lint: FORCE
 	$(LINTER) *.py
