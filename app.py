@@ -1,11 +1,14 @@
 from flask import Flask, render_template, redirect, request, session, url_for
 from flask_socketio import SocketIO, emit, join_room, leave_room
+from source.model import db
 import os
 
 app = Flask(__name__)
 #app.secret_key = os.environ.get('SECRET')
 app.secret_key = 'adfsjodanf'
 app.config['SECRET_KEY'] = 'adfsjodanf'
+
+db.init_app(app)
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
