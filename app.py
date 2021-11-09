@@ -1,30 +1,70 @@
-#!/bin/env python
-from flask import Flask
-#import psycopg2
-from source.socket import socketio
-import source.roomkey
-from source.moodels import db
+from flask import Flask, render_template, redirect, request, session, url_for
+from flask_socketio import SocketIO, emit, join_room, leave_room
+import os
 
 app = Flask(__name__)
-app.debug = True
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 *1000
-app.config['SECRET_KEY'] = 'randomkey'
+#app.secret_key = os.environ.get('SECRET')
+app.secret_key = 'adfsjodanf'
+app.config['SECRET_KEY'] = 'adfsjodanf'
 
-db.init_app(app)
+socketio = SocketIO(app)
+socketio.init_app(app, cors_allowed_origins="*")
 
-from source.route import main as main_blueprint
-app.register_blueprint(main_blueprint)
-socketio.init_app(app)
-import source.events
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        session['user_name'] = name
+        return redirect(url_for('.chat'))
+    return render_template('login.html')
 
-if __name__ == '__main__':
-    socketio.run(app)
+@app.route('/chat', methods=['GET', 'POST'])
+def chat():
+    return render_template('chat.html')
+    
 
-# Host be an issue once it's transferred to Heroku
-##conn = psycopg2.connect(
-##    database = "data/curator",
-##    user = "curator",
-##    password = "design_proj",
-##    host = "127.0.0.1", 
-##    port = "8080")
-##cur = conn.cursor()
+@socketio.on('connect')
+def connect():
+    print('successfully connected!')
+
+
+@socketio.on('join')
+def join(information):
+    room_name = information.get('client_to_server')
+    user_name = session.get('user_name')
+    join_room(room_name)
+    emit('status', {'server_to_client': user_name + ' enter the room'}, room=room_name)
+
+
+@socketio.on('leave')
+def leave(information):
+    room_name = information.get('client_to_server')
+    user_name = session.get('user_name')
+    leave_room(room_name)
+    emit('status', {'server_to_client': user_name + ' has left the room'}, room=room_name)
+
+
+@socketio.on('text')
+def text(information):
+    room_name = information.get('client_to_server')
+    text = information.get('text')
+    user_name = session.get('user_name')
+    emit('message', {
+        'user_name': user_name,
+        'text': text,
+    }, room=room_name)
+
+
+@socketio.on('mouse')
+def mouse(data):
+    # room_name = data.get('client_to_server')
+    socketio.emit('drawing', data)
+
+
+@socketio.on('my event')
+def handle_my_custom_event(json, methods=['GET', 'POST']):
+    print('received my event: ' + str(json))
+    socketio.emit('my response', json)
+
+if __name__=="__main__":
+    app.run()
