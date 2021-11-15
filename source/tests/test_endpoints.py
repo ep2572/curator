@@ -6,7 +6,6 @@ This runs tests for endpoints.py.
 
 from unittest import TestCase
 from flask_restx import Resource
-import json
 from source.endpoints import HelloWorld, HELLO, AVAILABLE, Endpoints, HOME, CHATROOM, Home, Chatroom
 from source.endpoints import HowTo, DATA_DIR, HOW_TO_JSON
 
