@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, url_for
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from source.model import db
+from source.roomkey import get_roomkey
 import os
 
 app = Flask(__name__)
@@ -30,7 +31,7 @@ def home():
         name = request.form.get('name')
         session['user_name'] = name
         return redirect(url_for('.chat'))
-    return render_template('login.html')
+    return render_template('home.html')
 
 @app.route('/chat', methods=['GET', 'POST'])
 def chat():
