@@ -7,7 +7,7 @@ app = Flask(__name__)
 #app.secret_key = os.environ.get('SECRET')
 app.secret_key = 'adfsjodanf'
 app.config['SECRET_KEY'] = 'adfsjodanf'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://aqvpbkttzajnds:0cfbf0ae2559a54c6cfc8ca080f1dca21382b4fc103bdbad544892bf0183e83e@ec2-23-23-133-10.compute-1.amazonaws.com:5432/dcacuaq89hfrqn'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 
 # Generate database with dummy room
 db.init_app(app)
