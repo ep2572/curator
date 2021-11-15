@@ -13,6 +13,24 @@ KEY_SIZE = 12
 IPV4_MAX_LENGTH = 15
 
 """
+A rooms only exists so long as 1 User is still present. Each room
+will maintain the chat log,
+"""
+
+
+class Room(db.Model):
+    key = db.Column(db.String(KEY_SIZE), primary_key=True)
+    host = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
+    name = db.Column(db.String(512), default='curator room '+key)
+    log = db.Column(db.Text, default='')
+    mute = db.Column(db.Boolean, default=False)
+    file = db.Column(db.LargeBinary)
+
+    def __repr__(self):
+        return '{}, {}'.format(self.name, self.key)
+
+
+"""
 A client can be in multiple rooms at once, with different names,
 colors, and roles. A new instance of the client class is given
 to the client for each room the are in.
@@ -34,24 +52,6 @@ class User(db.Model):
 
 
 """
-A rooms only exists so long as 1 User is still present. Each room
-will maintain the chat log,
-"""
-
-
-class Room(db.Model):
-    key = db.Column(db.String(KEY_SIZE), primary_key=True)
-    host = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
-    name = db.Column(db.String(512), default='curator room '+key)
-    log = db.Column(db.Text, default='')
-    mute = db.Column(db.Boolean, default=False)
-    file = db.Column(db.LargeBinary)
-
-    def __repr__(self):
-        return "{}, {}".format(self.name, self.key)
-
-
-"""
 Each instance of the Banlist has only one room and one user IP
 """
 
@@ -65,15 +65,4 @@ class Banlist(db.Model):
                    primary_key=True)
 
     def __repr__(self):
-        return 'Room: {}, User{}'.format(self.room, self.name)
-
-
-db.create_all()
-dummy_room = Room(key="",
-                  host="dummy",
-                  name="dummy_room",
-                  log="",
-                  mute=True,
-                  file=None)
-db.session.add(dummy_room)
-db.session.commit()
+        return 'Room: {}, IP{}'.format(self.room, self.ip)

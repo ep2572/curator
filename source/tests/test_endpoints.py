@@ -5,15 +5,15 @@ This runs tests for endpoints.py.
 
 from unittest import TestCase
 from flask_restx import Resource
-
+import json
 from source.endpoints import HelloWorld, HELLO, AVAILABLE, Endpoints, HOME, CHATROOM, Home, Chatroom
-from source.endpoints import Games
+from source.endpoints import HowTo, DATA_DIR, HOW_TO_JSON
 
 
 class TestEndpoints(TestCase):
     def test_home(self):
         """
-        Test our "home" endpoint.
+        Test "home" endpoint.
         """
         home_ep = Home(Resource)
         ret = home_ep.get()
@@ -21,7 +21,7 @@ class TestEndpoints(TestCase):
         
     def test_chatroom(self):
         """
-        Test our "chatroom" endpoint.
+        Test "chatroom" endpoint.
         """
         chat_ep = Chatroom(Resource)
         ret = chat_ep.put(12345)
@@ -29,7 +29,7 @@ class TestEndpoints(TestCase):
         
     def test_hello(self):
         """
-        Test our "hello" endpoint.
+        Test "hello" endpoint.
         """
         hello_ep = HelloWorld(Resource)
         ret = hello_ep.get()
@@ -37,18 +37,15 @@ class TestEndpoints(TestCase):
 
     def test_endpoints(self):
         """
-        Test our "endpoints" endpoint.
+        Test "endpoints" endpoint.
         """
         epts = Endpoints(Resource)
         ret = epts.get()
         self.assertIn(AVAILABLE, ret)
 
-    def test_games_list(self):
+    def test_how_to(self):
         """
-        Test our "games/list" endpoint.
+        Test "howto" endpoint.
         """
-        games = Games(Resource)
-        ret = games.get()
-        self.assertIsInstance(ret, dict)
-        # we expect more than one game type!
-        self.assertGreater(len(ret), 1)
+        how2 = HowTo(Resource)
+        ret = how2.get()

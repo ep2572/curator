@@ -1,0 +1,11 @@
+{
+    "Title": "How To",
+    "Default": 0,
+    "Choices": {
+        "1": {"url": "/chat/commands", "method": "get", "text": "Chat commands"},
+        "2": {"url": "/room/create", "method": "get", "text": "Create a room"},
+		"3": {"url": "/file/upload", "method": "get", "text": "Upload a file"},
+        "0": {"url": "", "text": "Exit"}
+    }
+}
+

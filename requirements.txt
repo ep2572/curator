@@ -9,6 +9,7 @@ Flask-Admin==1.5.8
 Flask-Login==0.5.0
 Flask-SocketIO==4.3.1
 Flask-SQLAlchemy==2.5.1
+Flask-RESTX>=0.5.0
 Flask-WTF==0.15.1
 gevent==21.8.0
 greenlet==1.1.1
@@ -23,7 +24,7 @@ redis==3.5.3
 six==1.16.0
 SQLAlchemy==1.4.23
 websockets==10.0
-Werkzeug==2.0.1
+Werkzeug>=2.0
 WTForms==2.3.3
 zope.event==4.5.0
 zope.interface==5.4.0

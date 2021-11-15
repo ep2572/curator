@@ -3,12 +3,10 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 
-import json
 from flask import Flask
-from flask_restx import Resource, Api, fields
+from flask_restx import Resource, Api
+import json
 from werkzeug.exceptions import NotFound
-
-from source.db import fetch_games
 
 app = Flask(__name__)
 api = Api(app)
@@ -17,19 +15,17 @@ HOME = 'Home'
 CHATROOM = 'Chatroom'
 HELLO = 'hello'
 AVAILABLE = 'Available endpoints:'
-MAIN_MENU = "Main Menu"
-MAIN_MENU_ROUTE = '/menus/main'
-
 DATA_DIR = '../data'
-MAIN_MENU_JSON = DATA_DIR + '/' + 'main_menu.json'
+HOW_TO_JSON = DATA_DIR + '/' + 'how_to.json'
 
 
-def get_main_menu():
-    print(f"Going to open {MAIN_MENU_JSON}")
+def get_how_to():
+    print(f"Going to open {HOW_TO_JSON}")
     try:
-        with open(MAIN_MENU_JSON) as file:
+        with open(HOW_TO_JSON) as file:
             return json.loads(file.read())
     except FileNotFoundError:
+        print('Failed to find {}'.format(HOW_TO_JSON))
         return None
 
 
@@ -85,8 +81,8 @@ class Endpoints(Resource):
         return {AVAILABLE: epts}
 
 
-@api.route(MAIN_MENU_ROUTE)
-class MainMenu(Resource):
+@api.route('/how_to')
+class HowTo(Resource):
     """
     This class will serve as live, fetchable documentation of what endpoints
     are available in the system.
@@ -97,51 +93,7 @@ class MainMenu(Resource):
         """
         The `get()` method will return the main menu.
         """
-        main_menu = get_main_menu()
-        if main_menu is None:
-            raise (NotFound("Main menu not found."))
-        return main_menu
-
-
-@api.route('/games/list')
-class Games(Resource):
-    """
-    This class supports fetching a list of all games.
-    """
-    def get(self):
-        """
-        This method returns all games.
-        """
-        return fetch_games()
-
-
-user = api.model("user", {
-    "name": fields.String("User name."),
-    "ip": fields.String("127.0.0.1"),
-    "color": fields.String("#000000"),
-    "status": fields.String("User")
-})
-
-
-@api.route('/games/join/<int:game_id>')
-class JoinGame(Resource):
-    """
-    This endpoint allows a user to join an existing game.
-    """
-    @api.expect(user)
-    def put(self, game_id):
-        return "Game joined."
-
-
-@api.route('/games/create')
-class CreateGame(Resource):
-    """
-    This class allows the user to create a new game.
-    We will be passing in some sort of game object as a
-    parameter. Details unknown at present.
-    """
-    def post(self):
-        """
-        This method returns all games.
-        """
-        return "Game created."
+        how_to = get_how_to()
+        if how_to is None:
+            raise (NotFound("How To not found."))
+        return how_to
