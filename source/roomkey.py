@@ -19,10 +19,3 @@ def get_roomkey():
             seq += alnum[random.randrange(0, 61)]
     keychain[seq] = 1
     return seq
-
-
-"""
-Testing
-"""
-# print(getroomkey())
-# print(len(keychain))
