@@ -27,7 +27,7 @@ python-socketio==4.6.0
 redis==3.5.3
 six==1.16.0
 SQLAlchemy==1.4.23
-websockets==10.0
+websockets==9.1
 Werkzeug>=2.0
 WTForms==2.3.3
 zope.event==4.5.0
