@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 
 # Generate database with dummy room
 db.init_app(app)
-#app.app_context().push()
+app.app_context().push()
 db.create_all(app)
 dummy_room = Room(key="",
                   host="dummy",
