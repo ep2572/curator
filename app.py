@@ -14,14 +14,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql' + os.environ.get('DATABASE_
 db.init_app(app)
 app.app_context().push()
 db.create_all()
-dummy_room = Room(key="",
-                  host="dummy",
-                  name="dummy_room",
-                  log="",
-                  mute=True,
-                  file=None)
-db.session.add(dummy_room)
-db.session.commit()
+#dummy_room = Room(key="",
+#                  host="dummy",
+#                  name="dummy_room",
+#                  log="",
+#                  mute=True,
+#                  file=None)
+#db.session.add(dummy_room)
+#db.session.commit()
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
