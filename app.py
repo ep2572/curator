@@ -13,7 +13,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql' + os.environ.get('DATABASE_
 # Generate database with dummy room
 db.init_app(app)
 app.app_context().push()
-#db.create_all()
+db.create_all()
 dummy_room = Room(key="",
                   host="dummy",
                   name="dummy_room",
