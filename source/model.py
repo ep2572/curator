@@ -44,7 +44,7 @@ class User(db.Model):
     role = db.Column(db.SmallInteger, default=0)
     # Default color is Black 0x000000
     color = db.Column(db.String(6), default='000000', nullable=False)
-    in_room = db.Column(db.String(KEY_SIZE), db.ForeignKey('room.key'),
+    in_room = db.Column(db.String(KEY_SIZE), db.ForeignKey('Room.key'),
                         primary_key=True)
 
     def __repr__(self):
@@ -58,10 +58,10 @@ Each instance of the Banlist has only one room and one user IP
 
 class Banlist(db.Model):
     room = db.Column(db.String(KEY_SIZE),
-                     db.ForeignKey('room.key'),
+                     db.ForeignKey('Room.key'),
                      primary_key=True)
     ip = db.Column(db.String(IPV4_MAX_LENGTH),
-                   db.ForeignKey('user.ip'),
+                   db.ForeignKey('User.ip'),
                    primary_key=True)
 
     def __repr__(self):
