@@ -17,18 +17,18 @@ USER_NAME = "test_user"
 
 class DBTestCase(TestCase):
     room = Room(key=TEST_KEY,
-                 host="123.456.789.010",
-                 name=ROOM_NAME,
-                 log="This is a test log.",
-                 mute=0,
-                 file=None)
+                host="123.456.789.010",
+                name=ROOM_NAME,
+                log="This is a test log.",
+                mute=0,
+                file=None)
     user = User(ip=TEST_IP,
-                 name="test_user",
-                 role=ROLE,
-                 color="000000",
-                 in_room=TEST_KEY)
+                name="test_user",
+                role=ROLE,
+                color="000000",
+                in_room=TEST_KEY)
     banlist = Banlist(room=TEST_KEY,
-                           ip=TEST_IP)
+                      user=TEST_IP)
     
     def test_room(self):
         """
