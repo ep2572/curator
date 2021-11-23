@@ -22,13 +22,13 @@ class DBTestCase(TestCase):
                 log="This is a test log.",
                 mute=0,
                 file=None)
-    user = User(ip=TEST_IP,
-                name="test_user",
-                role=ROLE,
-                color="000000",
-                in_room=TEST_KEY)
+    client = Client(ip=TEST_IP,
+                    name="test_user",
+                    role=ROLE,
+                    color="000000",
+                    in_room=TEST_KEY)
     banlist = Banlist(room=TEST_KEY,
-                      user=TEST_IP)
+                      client=TEST_IP)
     
     def test_room(self):
         """
@@ -40,7 +40,7 @@ class DBTestCase(TestCase):
         """
         Test the User table
         """
-        self.assertTrue(self.user.__repr__() == 'User: {}:{}, Role: {}'.format(USER_NAME, TEST_IP, ROLE))
+        self.assertTrue(self.user.__repr__() == 'Client: {}:{}, Role: {}'.format(USER_NAME, TEST_IP, ROLE))
 
     def test_banlist(self):
         """
