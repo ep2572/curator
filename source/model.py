@@ -1,7 +1,7 @@
 """
 ===============================================================================
 # Models for the database
-# Users(Many) to Rooms(Many)
+# Clients(Many) to Rooms(Many)
 ===============================================================================
 """
 
@@ -15,7 +15,7 @@ IPV4_MAX_LENGTH = 15
 
 class Room(db.Model):
     """
-    A rooms only exists so long as 1 User is still present. Each room
+    A rooms only exists so long as 1 Client is still present. Each room
     will maintain the chat log,
     """
     key = db.Column(db.String(KEY_SIZE), primary_key=True)
@@ -29,7 +29,7 @@ class Room(db.Model):
         return '{}, {}'.format(self.name, self.key)
 
 
-class User(db.Model):
+class Client(db.Model):
     """
     A client can be in multiple rooms at once, with different names,
     colors, and roles. A new instance of the client class is given
@@ -45,19 +45,19 @@ class User(db.Model):
                         primary_key=True)
 
     def __repr__(self):
-        return 'User: {}:{}, Role: {}'.format(self.name, self.ip, self.role)
+        return 'Client: {}:{}, Role: {}'.format(self.name, self.ip, self.role)
 
 
 class Banlist(db.Model):
     """
-    Each instance of the Banlist has only one room and one user IP
+    Each instance of the Banlist has only one room and one client IP
     """
     room = db.Column(db.String(KEY_SIZE),
                      db.ForeignKey('room.key'),
                      primary_key=True)
-    user = db.Column(db.String(IPV4_MAX_LENGTH),
-                     db.ForeignKey('user.ip'),
+    client = db.Column(db.String(IPV4_MAX_LENGTH),
+                     db.ForeignKey('client.ip'),
                      primary_key=True)
 
     def __repr__(self):
-        return 'Room: {}, IP{}'.format(self.room, self.user)
+        return 'Room: {}, IP{}'.format(self.room, self.client)
