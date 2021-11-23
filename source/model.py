@@ -56,8 +56,7 @@ class Banlist(db.Model):
                      db.ForeignKey('room.key'),
                      primary_key=True)
     client = db.Column(db.String(IPV4_MAX_LENGTH),
-                       db.ForeignKey('client.ip'),
-                       primary_key=True)
+                       db.ForeignKey('client.ip'))
 
     def __repr__(self):
         return 'Room: {}, IP{}'.format(self.room, self.client)
