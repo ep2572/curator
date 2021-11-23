@@ -12,7 +12,7 @@ ROLE = 2
 ROOM_NAME = "tester"
 TEST_IP = "127.0.0.1"
 TEST_KEY = "MyRoomTester"
-USER_NAME = "test_user"
+CLIENT_NAME = "test_client"
 
 
 class DBTestCase(TestCase):
@@ -23,7 +23,7 @@ class DBTestCase(TestCase):
                 mute=0,
                 file=None)
     client = Client(ip=TEST_IP,
-                    name="test_user",
+                    name="test_client",
                     role=ROLE,
                     color="000000",
                     in_room=TEST_KEY)
@@ -36,11 +36,11 @@ class DBTestCase(TestCase):
         """
         self.assertTrue(self.room.__repr__() == '{}, {}'.format(ROOM_NAME, TEST_KEY))
 
-    def test_user(self):
+    def test_client(self):
         """
         Test the User table
         """
-        self.assertTrue(self.user.__repr__() == 'Client: {}:{}, Role: {}'.format(USER_NAME, TEST_IP, ROLE))
+        self.assertTrue(self.client.__repr__() == 'Client: {}:{}, Role: {}'.format(CLIENT_NAME, TEST_IP, ROLE))
 
     def test_banlist(self):
         """
