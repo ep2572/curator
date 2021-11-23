@@ -12,13 +12,12 @@ db = SQLAlchemy()
 KEY_SIZE = 12
 IPV4_MAX_LENGTH = 15
 
-"""
-A rooms only exists so long as 1 User is still present. Each room
-will maintain the chat log,
-"""
-
 
 class Room(db.Model):
+    """
+    A rooms only exists so long as 1 User is still present. Each room
+    will maintain the chat log,
+    """
     key = db.Column(db.String(KEY_SIZE), primary_key=True)
     host = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
     name = db.Column(db.String(512), default='curator room '+key)
@@ -30,14 +29,12 @@ class Room(db.Model):
         return '{}, {}'.format(self.name, self.key)
 
 
-"""
-A client can be in multiple rooms at once, with different names,
-colors, and roles. A new instance of the client class is given
-to the client for each room the are in.
-"""
-
-
 class User(db.Model):
+    """
+    A client can be in multiple rooms at once, with different names,
+    colors, and roles. A new instance of the client class is given
+    to the client for each room the are in.
+    """
     ip = db.Column(db.String(IPV4_MAX_LENGTH), primary_key=True)
     name = db.Column(db.String(16), nullable=False)
     # role: 0 is guest, 1 is moderator, 2 is host
@@ -51,12 +48,10 @@ class User(db.Model):
         return 'User: {}:{}, Role: {}'.format(self.name, self.ip, self.role)
 
 
-"""
-Each instance of the Banlist has only one room and one user IP
-"""
-
-
 class Banlist(db.Model):
+    """
+    Each instance of the Banlist has only one room and one user IP
+    """
     room = db.Column(db.String(KEY_SIZE),
                      db.ForeignKey('room.key'),
                      primary_key=True)
