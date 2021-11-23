@@ -6,7 +6,7 @@ This runs tests for model.py
 from sys import path
 path.append('..')
 from unittest import TestCase
-from source.model import db, User, Room, Banlist
+from source.model import db, Client, Room, Banlist
 
 ROLE = 2
 ROOM_NAME = "tester"
