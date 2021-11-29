@@ -6,7 +6,7 @@ FORCE:
 docs: $(DOCFILES)
 
 %.html: %.py
-	pydoc3 -w ./$<
+	py -m pydoc -w $*
 	git add $@
 
 tests: lint unit
