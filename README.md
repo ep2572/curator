@@ -1,26 +1,37 @@
 # curator
 A private chatroom service featuring drawing and editing capabilities for collaboration, instruction, and review.
 
-To be written in Python.
+Written primarily in Python, HTML, and javascript
 
 A roadmap can be found [here](roadmap.txt)  
 A detailed wireframe can be found [here](sitemap.png)
 
 ## Current Implementation
 - Basic room structure built
-- SQL Database Setup
-- Once file overlay is complete:
+- Room key uniqueness enforcement
+- Database models built
+- app initialization: runnable without database access
+
+## In Development
+- data commits
+- integration of database into app routes
+
+## TO DO
+- File Overlay
     - Max file size: 16 MB
-    - 1 file per room
+    - 1 file per room, initially
 
 ## Setup
 1. Ensure that make and pip are properly installed on your system.
 2. Enter `make dev_env` to create the build environment.
-3. Use `make prod` to perform tests and push changes to github.
+4. Use `make prod` to perform tests and push changes to github.
 
 ## Testing
 - Use `make tests` to perform tests
 - Use `./local.sh` to run the server on localhost:8000
+
+## Documentation
+- Use `make docs` to generate HTML documentation for .py source files
 
 ## Initial Requirements
 - The application homepage will contain two main sections:  
