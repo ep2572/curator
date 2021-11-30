@@ -20,6 +20,10 @@ A detailed wireframe can be found [here](sitemap.png)
 - File Overlay
     - Max file size: 16 MB
     - 1 file per room, initially
+- Link drawing overlay to rooms
+- Implement chat commands
+- Implement information window overlay
+- Implement Save/Download feature
 
 ## Setup
 1. Ensure that make and pip are properly installed on your system.
