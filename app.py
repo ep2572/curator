@@ -24,7 +24,7 @@ dummy_room = Room(key="dummy",
                   mute=True,
                   file=None)
 db.session.add(dummy_room)
-db.session.commit()
+db.commit()
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
@@ -58,14 +58,14 @@ def make_room():
                     cap=capacity,
                     note=notice)
     db.session.add(new_room)
-    db.session.commit()
+    db.commit()
     new_user = Client(ip = user_ip,
                       name = username,
                       role = 2,
                       color = '000000',
                       in_room = new_room)
     db.session.add(new_user)
-    db.session.commit()
+    db.commit()
     return url_for('chat', room_key=roomkey, room = new_room, user = new_user)
 
 
