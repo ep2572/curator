@@ -20,11 +20,11 @@ class Room(db.Model):
     """
     key = db.Column(db.String(KEY_SIZE), primary_key=True)
     host = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
-    name = db.Column(db.String(64), server_default='curator room '+key)
-    cap = db.Column(db.Integer, server_default=32)
+    name = db.Column(db.String(64), default='curator room '+key)
+    #cap = db.Column(db.Integer, default=32)
     note = db.Column(db.String(512))
-    log = db.Column(db.Text, server_default='')
-    mute = db.Column(db.Boolean, server_default=False)
+    log = db.Column(db.Text, default='')
+    mute = db.Column(db.Boolean, default=False)
     file = db.Column(db.LargeBinary)
 
     def __repr__(self):
@@ -40,9 +40,9 @@ class Client(db.Model):
     ip = db.Column(db.String(IPV4_MAX_LENGTH), primary_key=True)
     name = db.Column(db.String(16), nullable=False)
     # role: 0 is guest, 1 is moderator, 2 is host
-    role = db.Column(db.SmallInteger, server_default=0)
+    role = db.Column(db.SmallInteger, default=0)
     # Default color is Black 0x000000
-    color = db.Column(db.String(6), server_default='000000', nullable=False)
+    color = db.Column(db.String(6), default='000000', nullable=False)
     in_room = db.Column(db.String(KEY_SIZE), db.ForeignKey('room.key'),
                         primary_key=True)
 
