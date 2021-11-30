@@ -14,10 +14,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql' + os.environ.get('DATABASE_
 db.init_app(app)
 app.app_context().push()
 db.create_all()
-dummy_room = Room(key="",
+dummy_room = Room(key="dummy",
                   host="dummy",
                   name="dummy_room",
-                  log="",
+                  cap=32,
+                  note="",
+                  log="This is the dummy room. The room you are looking for doesn't exist.",
                   mute=True,
                   file=None)
 db.session.add(dummy_room)
@@ -34,10 +36,37 @@ def home():
         return redirect(url_for('.chat'))
     return render_template('home.html')
 
-@app.route('/chat', methods=['GET', 'POST'])
-def chat():
+
+@app.route('/chat/<string:room_key>', methods=['GET', 'POST'])
+def chat(room_key):
+    
     return render_template('chat.html')
     
+
+@app.route('make_room', methods=['GET', 'POST'])
+def make_room():
+    roomkey = get_roomkey()
+    user_ip = request.remote_addr
+    username = request.form['user_name']
+    roomname = request.form['room_name']
+    capacity = request.form['capacity']
+    notice = request.form['note']
+    new_room = Room(key=roomkey,
+                    host=ip,
+                    name=roomname,
+                    cap=capacity,
+                    note=notice)
+    db.session.add(new_room)
+    db.session.commit()
+    new_user = Client(ip = user_ip,
+                      name = username,
+                      role = 2,
+                      color = '000000',
+                      in_room = new_room)
+    db.session.add(new_user)
+    db.session.commit()
+    return url_for('chat', room_key=roomkey, room = new_room, user = new_user)
+
 
 @socketio.on('connect')
 def connect():
