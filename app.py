@@ -52,7 +52,7 @@ def make_room():
     capacity = request.form['capacity']
     notice = request.form['note']
     new_room = Room(key=roomkey,
-                    host=ip,
+                    host=user_ip,
                     name=roomname,
                     cap=capacity,
                     note=notice)
