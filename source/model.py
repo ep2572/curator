@@ -21,11 +21,11 @@ class Room(db.Model):
     key = db.Column(db.String(KEY_SIZE), primary_key=True)
     host = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
     name = db.Column(db.String(64), default='curator room '+key)
-    cap = db.Column(db.Integer, default=32)
-    note = db.Column(db.String(512))
-    log = db.Column(db.Text, default='')
-    mute = db.Column(db.Boolean, default=False)
-    file = db.Column(db.LargeBinary)
+    cap = db.Column(db.Integer, nullable=False, default=32)
+    note = db.Column(db.String(512), nullable=True)
+    log = db.Column(db.Text, nullable=True)
+    mute = db.Column(db.Boolean, nullable=False, default=False)
+    file = db.Column(db.LargeBinary, nullable=True)
 
     def __repr__(self):
         return '{}, {}'.format(self.name, self.key)
@@ -57,7 +57,7 @@ class Banlist(db.Model):
     room = db.Column(db.String(KEY_SIZE),
                      db.ForeignKey('room.key'),
                      primary_key=True)
-    client = db.Column(db.String(IPV4_MAX_LENGTH))
+    client = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
 
     def __repr__(self):
         return 'Room: {}, IP{}'.format(self.room, self.client)
