@@ -15,14 +15,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 app.app_context().push()
 db.create_all()
-dummy_room = Room(key="dummy",
-                  host="dummy",
-                  name="dummy_room",
-                  cap=32,
-                  note="",
-                  log="This is the dummy room. The room you are looking for doesn't exist.",
-                  mute=True,
-                  file=None)
+##dummy_room = Room(key="dummy",
+##                  host="dummy",
+##                  name="dummy_room",
+##                  cap=32,
+##                  note="",
+##                  log="This is the dummy room. The room you are looking for doesn't exist.",
+##                  mute=True,
+##                  file=None)
 ##db.session.add(dummy_room)
 ##db.commit()
 
@@ -66,7 +66,7 @@ def make_room():
 ##                      in_room = new_room)
 ##    db.session.add(new_user)
 ##    db.commit()
-    return url_for('chat', room_key=roomkey)#, room = new_room, user = new_user)
+    return redirect('/chat/'+roomkey)#, room = new_room, user = new_user)
 
 
 @socketio.on('connect')
