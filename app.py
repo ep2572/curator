@@ -39,9 +39,9 @@ def home():
 
 
 @app.route('/chat/<string:room_key>', methods=['GET', 'POST'])
-def chat(room):
+def chat():
     
-    return render_template('chat.html', room_name=room)
+    return render_template('chat.html', room_name=room_key)
     
 
 @app.route('/make_room', methods=['GET', 'POST'])
