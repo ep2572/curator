@@ -18,7 +18,7 @@ db.create_all()
 dummy_room = Room(key="dummy",
                   host="dummy",
                   name="dummy_room",
-                  # cap=32,
+                  cap=32,
                   note="",
                   log="This is the dummy room. The room you are looking for doesn't exist.",
                   mute=True,
@@ -54,7 +54,7 @@ def make_room():
     new_room = Room(key=roomkey,
                     host=ip,
                     name=roomname,
-                    # cap=capacity,
+                    cap=capacity,
                     note=notice)
     db.session.add(new_room)
 ##    db.session.commit()

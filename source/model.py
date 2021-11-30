@@ -21,7 +21,7 @@ class Room(db.Model):
     key = db.Column(db.String(KEY_SIZE), primary_key=True)
     host = db.Column(db.String(IPV4_MAX_LENGTH), nullable=False)
     name = db.Column(db.String(64), default='curator room '+key)
-    # cap = db.Column(db.Integer, default=32)
+    cap = db.Column(db.Integer, default=32)
     note = db.Column(db.String(512))
     log = db.Column(db.Text, default='')
     mute = db.Column(db.Boolean, default=False)
