@@ -24,7 +24,7 @@ dummy_room = Room(key="dummy",
                   mute=True,
                   file=None)
 db.session.add(dummy_room)
-db.session.commit()
+## db.session.commit()
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
