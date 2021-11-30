@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.secret_key = 'adfsjodanf'
 app.config['SECRET_KEY'] = 'adfsjodanf'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql' + os.environ.get('DATABASE_URL')[8:]
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Generate database with dummy room
 db.init_app(app)
