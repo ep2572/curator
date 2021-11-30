@@ -15,16 +15,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 app.app_context().push()
 db.create_all()
-dummy_room = Room(key="dummy",
-                  host="dummy",
-                  name="dummy_room",
-                  cap=32,
-                  note="",
-                  log="This is the dummy room. The room you are looking for doesn't exist.",
-                  mute=True,
-                  file=None)
-db.session.add(dummy_room)
-db.commit()
+##dummy_room = Room(key="dummy",
+##                  host="dummy",
+##                  name="dummy_room",
+##                  cap=32,
+##                  note="",
+##                  log="This is the dummy room. The room you are looking for doesn't exist.",
+##                  mute=True,
+##                  file=None)
+##db.session.add(dummy_room)
+##db.commit()
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
@@ -52,20 +52,20 @@ def make_room():
     roomname = request.form['room_name']
     capacity = request.form['capacity']
     notice = request.form['note']
-    new_room = Room(key=roomkey,
-                    host=ip,
-                    name=roomname,
-                    cap=capacity,
-                    note=notice)
-    db.session.add(new_room)
-    db.commit()
-    new_user = Client(ip = user_ip,
-                      name = username,
-                      role = 2,
-                      color = '000000',
-                      in_room = new_room)
-    db.session.add(new_user)
-    db.commit()
+##    new_room = Room(key=roomkey,
+##                    host=ip,
+##                    name=roomname,
+##                    cap=capacity,
+##                    note=notice)
+##    db.session.add(new_room)
+##    db.commit()
+##    new_user = Client(ip = user_ip,
+##                      name = username,
+##                      role = 2,
+##                      color = '000000',
+##                      in_room = new_room)
+##    db.session.add(new_user)
+##    db.commit()
     return url_for('chat', room_key=roomkey, room = new_room, user = new_user)
 
 
