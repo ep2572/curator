@@ -66,7 +66,7 @@ def make_room():
 ##                      in_room = new_room)
 ##    db.session.add(new_user)
 ##    db.commit()
-    return url_for('chat', room_key=roomkey, room = new_room, user = new_user)
+    return url_for('/chat/<string:room_key>', room_key=roomkey, room = new_room, user = new_user)
 
 
 @socketio.on('connect')
