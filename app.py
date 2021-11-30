@@ -44,7 +44,7 @@ def chat(room_key):
     return render_template('chat.html')
     
 
-@app.route('make_room', methods=['GET', 'POST'])
+@app.route('/make_room', methods=['GET', 'POST'])
 def make_room():
     roomkey = get_roomkey()
     user_ip = request.remote_addr
@@ -66,7 +66,7 @@ def make_room():
 ##                      in_room = new_room)
 ##    db.session.add(new_user)
 ##    db.commit()
-    return url_for('/chat/<string:room_key>', room_key=roomkey, room = new_room, user = new_user)
+    return url_for('chat', room_key=roomkey, room = new_room, user = new_user)
 
 
 @socketio.on('connect')
