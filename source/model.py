@@ -52,7 +52,7 @@ class Client(db.Model):
 
 class Banlist(db.Model):
     """
-    Each instance of the Banlist has only one room and one client IP
+    Each instance of the Banlist corresponds to a single room
     """
     room = db.Column(db.String(KEY_SIZE),
                      db.ForeignKey('room.key'),
