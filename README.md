@@ -16,7 +16,7 @@ A detailed wireframe can be found [here](sitemap.png)
 - data commits
 - integration of database into app routes
 
-## TO DO
+## To Be Developed
 - File Overlay
     - Max file size: 16 MB
     - 1 file per room, initially
