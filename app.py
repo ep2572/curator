@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, url_for
 from flask_migrate import Migrate
 from flask_socketio import SocketIO, emit, join_room, leave_room
+from flask_sqlalchemy import text
 from source.model import db, Room, Client, Banlist
 from source.roomkey import get_roomkey
 import os
@@ -17,7 +18,7 @@ db.init_app(app)
 migrate = Migrate(app, db)
 app.app_context().push()
 ##db.create_all()
-open_rooms = db.session.query("SELECT * FROM room")
+open_rooms = db.session.query(text("SELECT * FROM room"))
 open_rooms.delete()
 db.session.commit()
 dummy_room = Room(key="dummy",
