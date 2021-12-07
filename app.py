@@ -19,7 +19,8 @@ migrate = Migrate(app, db)
 app.app_context().push()
 ##db.create_all()
 open_rooms = Room.query.all()
-db.session.delete(open_rooms)
+for room in open_rooms:
+    db.session.delete(room)
 db.session.commit()
 dummy_room = Room(key="dummy",
                   host="dummy",
