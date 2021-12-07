@@ -57,20 +57,19 @@ def make_room():
     roomname = request.form['room_name']
     capacity = request.form['capacity']
     notice = request.form['note']
-    new_room = Room(key=roomkey,
-                    host=user_ip,
-                    name=roomname,
-                    cap=capacity,
-                    note=notice)
-    db.session.add(new_room)
-    db.session.commit()
-    new_user = Client(ip = user_ip,
-                      name = username,
-                      role = 2,
-                      color = '000000',
-                      in_room = new_room)
-    db.session.add(new_user)
-    db.session.commit()
+##    new_room = Room(key=roomkey,
+##                    host=user_ip,
+##                    name=roomname,
+##                    cap=capacity,
+##                    note=notice)
+##    db.session.add(new_room)
+##    new_user = Client(ip = user_ip,
+##                      name = username,
+##                      role = 2,
+##                      color = '000000',
+##                      in_room = new_room)
+##    db.session.add(new_user)
+##    db.session.commit()
     return redirect('/chat/'+roomkey)
 
 
