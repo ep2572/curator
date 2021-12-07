@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, session, url_for
-from flask_migrate import Migrate, init, migrate
+from flask_migrate import Migrate
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from source.model import db, Room, Client, Banlist
 from source.roomkey import get_roomkey
@@ -14,21 +14,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Generate database with dummy room
 db.init_app(app)
-migrate_db = Migrate(app, db)
-init(directory='migrations', multidb=False)
-migrate(directory='migrations',
-        message=None,
-        sql=False,
-        head='head',
-        splice=False,
-        branch_label=None,
-        version_path=None,
-        rev_id=None)
-##db.create_all()
+migrate = Migrate(app, db)
+app.app_context().push()
+## db.create_all()
 open_rooms = Room.query.all()
 for room in open_rooms:
     db.session.delete(room)
-app.app_context().push()
+db.session.commit()
 dummy_room = Room(key="dummy",
                   host="dummy",
                   name="dummy_room",
@@ -38,7 +30,7 @@ dummy_room = Room(key="dummy",
                   mute=True,
                   file=None)
 db.session.add(dummy_room)
-app.app_context().push()
+## db.session.commit()
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
