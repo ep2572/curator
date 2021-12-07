@@ -16,7 +16,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 migrate = Migrate(app, db)
 app.app_context().push()
-db.create_all()
+##db.create_all()
+db.session.drop(dummy_room)
 dummy_room = Room(key="dummy",
                   host="dummy",
                   name="dummy_room",
