@@ -19,6 +19,7 @@ db.init_app(app)
 app.app_context().push()
 migrate = Migrate(app, db)
 manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 #db.create_all()
 dummy_room = Room(key="dummy",
                   host="dummy",
