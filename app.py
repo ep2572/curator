@@ -1,5 +1,8 @@
 from flask import Flask, render_template, redirect, request, session, url_for
+from flask_migrate import Migrate, MigrateCommand
+from flask_script import Manager
 from flask_socketio import SocketIO, emit, join_room, leave_room
+
 from source.model import db, Room, Client, Banlist
 from source.roomkey import get_roomkey
 import os
@@ -14,7 +17,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Generate database with dummy room
 db.init_app(app)
 app.app_context().push()
-db.create_all()
+migrate = Migrate(app, db)
+manager = Manager(app)
+#db.create_all()
 dummy_room = Room(key="dummy",
                   host="dummy",
                   name="dummy_room",
@@ -112,4 +117,5 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     socketio.emit('my response', json)
 
 if __name__=="__main__":
+    manager.run()
     app.run()

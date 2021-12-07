@@ -20,7 +20,7 @@ HOW_TO_JSON = DATA_DIR + '/' + 'how_to.json'
 
 
 def get_how_to():
-    print(f"Going to open {HOW_TO_JSON}")
+    print("Going to open {HOW_TO_JSON}")
     try:
         with open(HOW_TO_JSON) as file:
             return json.loads(file.read())
