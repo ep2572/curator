@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>model</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cevan%5Ccurator%5Csource%5Cmodel.py">c:\users\evan\curator\source\model.py</a></font></td></tr></table>
+    <p><tt>===============================================================================<br>
+#&nbsp;Models&nbsp;for&nbsp;the&nbsp;database<br>
+#&nbsp;Clients(Many)&nbsp;to&nbsp;Rooms(Many)<br>
+===============================================================================</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.orm.decl_api.Model(<a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="model.html#Banlist">Banlist</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#Client">Client</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#Room">Room</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Banlist">class <strong>Banlist</strong></a>(sqlalchemy.orm.decl_api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Banlist">Banlist</a>(**kwargs)<br>
+&nbsp;<br>
+Each&nbsp;instance&nbsp;of&nbsp;the&nbsp;<a href="#Banlist">Banlist</a>&nbsp;corresponds&nbsp;to&nbsp;a&nbsp;single&nbsp;room<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#Banlist">Banlist</a></dd>
+<dd>sqlalchemy.orm.decl_api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Banlist-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Banlist-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>client</strong></dt>
+</dl>
+<dl><dt><strong>room</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2788b172490; Banlist&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('banlist', MetaData(), Column('room', Stri...), table=&lt;banlist&gt;, nullable=False), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'banlist'</dl>
+
+<hr>
+Methods inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>__abstract__</strong> = True</dl>
+
+<dl><dt><strong>metadata</strong> = MetaData()</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<dl><dt><strong>registry</strong> = &lt;sqlalchemy.orm.decl_api.registry object&gt;</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Client">class <strong>Client</strong></a>(sqlalchemy.orm.decl_api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Client">Client</a>(**kwargs)<br>
+&nbsp;<br>
+A&nbsp;client&nbsp;can&nbsp;be&nbsp;in&nbsp;multiple&nbsp;rooms&nbsp;at&nbsp;once,&nbsp;with&nbsp;different&nbsp;names,<br>
+colors,&nbsp;and&nbsp;roles.&nbsp;A&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;client&nbsp;class&nbsp;is&nbsp;given<br>
+to&nbsp;the&nbsp;client&nbsp;for&nbsp;each&nbsp;room&nbsp;the&nbsp;are&nbsp;in.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#Client">Client</a></dd>
+<dd>sqlalchemy.orm.decl_api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Client-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Client-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>color</strong></dt>
+</dl>
+<dl><dt><strong>in_room</strong></dt>
+</dl>
+<dl><dt><strong>ip</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>role</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2788b1720d0; Client&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('client', MetaData(), Column('ip', String(..., primary_key=True, nullable=False), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'client'</dl>
+
+<hr>
+Methods inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>__abstract__</strong> = True</dl>
+
+<dl><dt><strong>metadata</strong> = MetaData()</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<dl><dt><strong>registry</strong> = &lt;sqlalchemy.orm.decl_api.registry object&gt;</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Room">class <strong>Room</strong></a>(sqlalchemy.orm.decl_api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Room">Room</a>(**kwargs)<br>
+&nbsp;<br>
+A&nbsp;rooms&nbsp;only&nbsp;exists&nbsp;so&nbsp;long&nbsp;as&nbsp;1&nbsp;<a href="#Client">Client</a>&nbsp;is&nbsp;still&nbsp;present.&nbsp;Each&nbsp;room<br>
+will&nbsp;maintain&nbsp;the&nbsp;chat&nbsp;log,<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#Room">Room</a></dd>
+<dd>sqlalchemy.orm.decl_api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Room-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Room-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>cap</strong></dt>
+</dl>
+<dl><dt><strong>file</strong></dt>
+</dl>
+<dl><dt><strong>host</strong></dt>
+</dl>
+<dl><dt><strong>key</strong></dt>
+</dl>
+<dl><dt><strong>log</strong></dt>
+</dl>
+<dl><dt><strong>mute</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>note</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2788b13bb20; Room&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('room', MetaData(), Column('key', String(l...file', LargeBinary(), table=&lt;room&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'room'</dl>
+
+<hr>
+Methods inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.orm.decl_api.Model:<br>
+<dl><dt><strong>__abstract__</strong> = True</dl>
+
+<dl><dt><strong>metadata</strong> = MetaData()</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<dl><dt><strong>registry</strong> = &lt;sqlalchemy.orm.decl_api.registry object&gt;</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>IPV4_MAX_LENGTH</strong> = 15<br>
+<strong>KEY_SIZE</strong> = 12<br>
+<strong>db</strong> = &lt;SQLAlchemy engine=None&gt;</td></tr></table>
+</body></html>
