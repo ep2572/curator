@@ -24,12 +24,11 @@ migrate(directory='migrations',
         branch_label=None,
         version_path=None,
         rev_id=None)
-app.app_context().push()
 ##db.create_all()
 open_rooms = Room.query.all()
 for room in open_rooms:
     db.session.delete(room)
-db.session.commit()
+app.app_context().push()
 dummy_room = Room(key="dummy",
                   host="dummy",
                   name="dummy_room",
@@ -39,7 +38,7 @@ dummy_room = Room(key="dummy",
                   mute=True,
                   file=None)
 db.session.add(dummy_room)
-db.session.commit()
+app.app_context().push()
 
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
