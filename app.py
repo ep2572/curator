@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, url_for
 from flask_migrate import Migrate
 from flask_socketio import SocketIO, emit, join_room, leave_room
-from flask_sqlalchemy import text
+from sqlalchemy import text
 from source.model import db, Room, Client, Banlist
 from source.roomkey import get_roomkey
 import os
