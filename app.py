@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request, session, url_for
 from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager
 from flask_socketio import SocketIO, emit, join_room, leave_room
 
 from source.model import db, Room, Client, Banlist
@@ -18,8 +17,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 app.app_context().push()
 migrate = Migrate(app, db)
-manager = Manager(app)
-manager.add_command('db', MigrateCommand)
 #db.create_all()
 dummy_room = Room(key="dummy",
                   host="dummy",
